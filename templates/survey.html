@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Survey{% endblock %}
+
+{% block content %}
+<h1>Survey</h1>
+<form action="{{ url_for('survey') }}" method="POST">
+    <label for="favorite_pizza">What's your favorite pizza?</label><br>
+    <input type="text" id="favorite_pizza" name="favorite_pizza" required><br>
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Survey Results{% endblock %}
+
+{% block content %}
+<h1>Survey Results</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Favorite Pizza</th>
+    </tr>
+    {% for result in survey_results %}
+    <tr>
+        <td>{{ result.id }}</td>
+        <td>{{ result.favorite_pizza }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

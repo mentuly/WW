@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Pizzeria Oderman{% endblock %}
+
+{% block content %}
+<h1>Welcome to Pizzeria Oderman</h1>
+<img src="{{ url_for('static', filename='pizzeria.jpg') }}" alt="Pizzeria Oderman">
+<p>Enjoy the best pizzas in town!</p>
+<a href="{{ url_for('menu') }}">Menu</a>
+
+<div id="weather">
+    {% if weather %}
+    <h2>Current Weather in {{ weather.name }}</h2>
+    <p>Temperature: {{ weather.main.temp }} °C</p>
+    <p>Condition: {{ weather.weather[0].description }}</p>
+    {% else %}
+    <p>Cannot retrieve weather data at the moment.</p>
+    {% endif %}
+</div>
+
+<div id="recommendation">
+    <h2>Pizza Recommendation</h2>
+    <p>{{ recommendation }}</p>
+</div>
+{% endblock %}
